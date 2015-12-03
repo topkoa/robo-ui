@@ -1,0 +1,25 @@
+
+<div ng-controller="ArduController">
+
+  <md-card>
+
+    <img class="md-card-image" alt="LED Controller Card">
+ 
+    <md-card-content>
+      <h2>Here we will control an LED remotely.</h2>
+      <p>Toggle the switch below: </p>
+
+      <md-switch ng-model="data.cb1" aria-label="LED 1" ng-change="onChange(data.cb1)">
+       Toggle On/Off
+      </md-switch>
+
+    </md-card-content>
+
+    <md-card-footer>
+      The Current State of the LED is: {{ message }} 
+    </md-card-footer>
+
+
+  </md-card>
+
+</div>
