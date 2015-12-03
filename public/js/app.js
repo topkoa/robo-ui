@@ -23,7 +23,7 @@
 
   app.controller('NavButtons', function ($scope) {
     $scope.submit1 = function () { 
-      alert ("moo"); 
+      alert ("Alert TEST"); 
     };
     $scope.testButton = function (path) {
       $location.path(path);
