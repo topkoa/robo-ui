@@ -10,6 +10,7 @@ Usage:
 clone git repo
 
 npm install
+
 bower install
 
 coffee server.coffee
