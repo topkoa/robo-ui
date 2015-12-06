@@ -33,13 +33,23 @@
   app.controller('ArduController', function ($scope, mySocket) {
 
         $scope.data = {
-          cb1: false
+          cb1: false,
+          intensity: 0,
+          red: 0,
+          blue: 0,
+          green: 0
         };
 
         $scope.message = 'false';
 
+        $scope.onRGBChange = function(data) {
+          console.log("Intensity: " + data.intensity + " Red: " + data.red + " Blue: " + data.blue + " Green: " + data.green );
+          mySocket.emit("rgb", data);
+        }
+
         $scope.onChange = function(cbState) {
-          
+         
+          // For LED toggle
           if (cbState === true) {
             mySocket.emit('led:on');
             console.log('LED ON');
@@ -49,8 +59,9 @@
             console.log('LED OFF');
             $scope.message = cbState;
           }; 
-        };
 
+        };
+  
         $scope.ledOn = function () {
             mySocket.emit('led:on');
             console.log('LED ON');
@@ -60,6 +71,11 @@
             mySocket.emit('led:off');
             console.log('LED OFF');
         };
+
+        mySocket.on('key', function(msg) {
+          console.log("got key pressed on " + msg );
+          $scope.qs1 = "TRUE";
+        });
 
         mySocket.on('alert', function(msg) {
           //alert(msg);

@@ -3,7 +3,7 @@
 
   <md-card>
 
-    <img class="md-card-image" alt="LED Controller Card">
+    <img class="md-card-image" alt="LED Controller">
  
     <md-card-content>
       <h2>Here we will control an LED remotely.</h2>
@@ -21,5 +21,41 @@
 
 
   </md-card>
+
+  <md-card>
+
+    <img class="md-card-image" alt="Grove Q-Touch Sensor">
+ 
+    <md-card-content>
+      <h2>Here we will Get KEY pressed from Touch Sensative GROVE Q-Touch sensor</h2>
+      <div layout="row">
+        <div flex flex-order="-1">
+          <p>{{ qs1 }}</p>
+        </div>
+      </div>
+    </md-card-content>
+
+    <md-card-footer>
+    </md-card-footer>
+
+  </md-card>
+
+  <md-card>
+
+    <img class="md-card-image" alt="RGB LED Slider">
+ 
+    <md-card-content>
+      <h2>RGB LED Slider</h2>
+      INTENSITY: <md-slider aria-label="LED Intensity" ng-model="data.intensity" step="1" min="0" max="100" ng-change="onRGBChange(data)"></md-slider>
+      RED: <md-slider aria-label="RED LED Value" ng-model="data.red" step="1" min="0" max="255"  ng-change="onRGBChange(data)"></md-slider>
+      BLUE: <md-slider aria-label="BLUE LED Value" ng-model="data.blue" step="1" min="0" max="255" ng-change="onRGBChange(data)"></md-slider>
+      GREEN: <md-slider aria-label="GREEN LED Value" ng-model="data.green" step="1" min="0" max="255" ng-change="onRGBChange(data)"></md-slider>
+    </md-card-content>
+
+    <md-card-footer>
+    </md-card-footer>
+
+  </md-card>
+
 
 </div>
